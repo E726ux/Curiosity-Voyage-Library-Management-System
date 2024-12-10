@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Curiosity_Voyage_Library_Management_System_1;
+namespace Curiosity_Voyage_Library_Management_System_1.Models;
 
 public class Books
 {
