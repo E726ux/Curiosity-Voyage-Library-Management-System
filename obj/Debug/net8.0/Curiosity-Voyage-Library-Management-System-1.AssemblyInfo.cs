@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Curiosity-Voyage-Library-Management-System-1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4b6c097b0733d68b1a6f5a82eefe18a09f0435e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e1eba8db767ed176f5b559edb03f345a33e79ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("Curiosity-Voyage-Library-Management-System-1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Curiosity-Voyage-Library-Management-System-1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
