@@ -17,4 +17,7 @@ public class Books
     
     [Range(00, 99)]
     public int PublishedYear {get; set;}
+
+    // This property is optional (?) because Books can exist without being Borrowed. Borrowers can exist without Books.
+public List<BookBorrower>? BookBorrowers {get; set;} = default!; // Navigation property. A Borrower can get many Books.
 }

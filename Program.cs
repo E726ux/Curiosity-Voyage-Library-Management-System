@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Curiosity_Voyage_Library_Management_System_1.Models;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<LibraryDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("LibraryConnection")));
 
 var app = builder.Build();
 
