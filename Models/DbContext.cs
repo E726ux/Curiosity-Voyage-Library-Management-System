@@ -1,16 +1,26 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyModel;
 
 namespace Curiosity_Voyage_Library_Management_System_1.Models;
 
-public class LibraryDbContext : DbContext
+public class AppDbContext : DbContext
 {
-public LibraryDbContext(DbContextOptions<LibraryDbContext> options)
-                : base(options)
-                {
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+    {
 
-                }  
+    }
 
-    public DbSet<Library>? Books {get; set;} 
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<BookBorrower>().HasKey(s => new {s.BooksID, s.BorrowersID});
+    }
+
+    public DbSet<Books>? Books {get; set;}
+    public DbSet<Borrowers>? Borrowers {get; set;}
+    public DbSet<BookBorrowers>? BookBorrowers {get; set;}
 }
 
+public class BookBorrowers
+{
+}
