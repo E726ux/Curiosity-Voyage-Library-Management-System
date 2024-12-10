@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<LibraryDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("LibraryConnection")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("BookBorrowerConnection")));
 
 var app = builder.Build();
 
