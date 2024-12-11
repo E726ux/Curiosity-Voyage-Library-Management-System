@@ -1,0 +1,67 @@
+@page
+@model Curiosity_Voyage_Library_Management_System_1.Pages.Borrower.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Borrowers[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Borrowers[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Borrowers[0].PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Borrowers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BorrowersID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BorrowersID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BorrowersID">Delete</a>
+            </td>
+        </tr>
+    // If we are on page 1, prevDisabled will be set to the "disabled" class
+    // otherwise, it will be empty. So our previous button will be enabled or disabled based on this logic
+    var prevDisabled = "";
+    var nextDisabled = "";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+    if (Model.PageNum >= Model.TotalPages)
+    {
+        nextDisabled = "disabled";
+    }
+}
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+        <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+    </ul>
+</nav>
+}
+    </tbody>
+</table>
