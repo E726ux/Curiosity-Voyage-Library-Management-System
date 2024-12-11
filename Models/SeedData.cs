@@ -14,7 +14,7 @@ public static class SeedData
             return;
         }
 
-        List<Borrowers> borrowers = new List<Borrowers>
+        List<Borrowers> Name = new List<Borrowers>
         {
             new Borrowers { BorrowersID = 123, Name = "George", Email = "George@gmail.com", PhoneNumber = "Number", },
             new Borrowers { BorrowersID = 145, Name = "Eric", Email = "Eric@gmail.com", PhoneNumber = "Number", },
@@ -43,10 +43,10 @@ public static class SeedData
             new Borrowers { BorrowersID = 282, Name = "Sally", Email = "Sally@gmail.com", PhoneNumber = "Number", },
             
         };
-        context.AddRange(borrowers);
+        context.AddRange(Name);
         context.SaveChanges();
 
-        List<Books> books = new List<Books>
+        List<Books> Title = new List<Books>
         {
             new Books { BooksID = 1,  Title = "Charlotte's Web", Author = "E.B. White", ISBN = "13243546890", PublishedYear = 1952, },
             new Books { BooksID = 2,  Title = "Old Yeller", Author = "Fred Gipson", ISBN = "2468954710", PublishedYear = 1942, },
@@ -58,6 +58,17 @@ public static class SeedData
             new Books { BooksID = 8,  Title = "Big Red", Author = "Jim Kjelgaard", ISBN = "0193567294", PublishedYear = 2011, },
             new Books { BooksID = 9,  Title = "Animal Farm", Author = "George Orwell", ISBN = "7924314206", PublishedYear = 1945, },
             new Books { BooksID = 10,  Title = "To Kill a Mocking Bird", Author = "Harper Lee", ISBN = "7102573910", PublishedYear = 1958, },
+        };
+        context.AddRange(Title);
+        context.SaveChanges();
+
+        List<BookBorrowers> bookborrowers = new List<BookBorrowers>
+        {
+            new BookBorrowers {BorrowersID = 145, BooksID = 9, Title = "Animal Farm", Name = "Eric", },
+            new BookBorrowers {BorrowersID = 555, BooksID = 2, Title = "Old Yeller", Name = "Naomi", },
+            new BookBorrowers {BorrowersID = 753, BooksID = 7, Title = "The Road", Name = "Calvin", },
+            new BookBorrowers {BorrowersID = 277, BooksID = 4, Title = "Calvin and Hobbes", Name = "Azazel", },
+            new BookBorrowers {BorrowersID = 282, BooksID = 3, Title = "The Stand", Name = "Sally", },
         };
     }
 }

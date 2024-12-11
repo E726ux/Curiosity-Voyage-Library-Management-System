@@ -13,10 +13,10 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<BookBorrower>().HasKey(s => new {s.BooksID, s.BorrowersID});
+        modelBuilder.Entity<BookBorrowers>().HasKey(s => new {s.BooksID, s.BorrowersID});
     }
 
     public DbSet<Books>? Books {get; set;}
     public DbSet<Borrowers>? Borrowers {get; set;}
-    public DbSet<BookBorrower>? BookBorrower {get; set;}
+    public DbSet<BookBorrowers>? BookBorrower {get; set;}
 }

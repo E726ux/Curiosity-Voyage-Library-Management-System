@@ -18,13 +18,18 @@ public class Borrowers
     public string PhoneNumber {get; set;} = string.Empty;
 
     // This property is optional (?) because Books can exist without being Borrowed. Borrowers can exist without Books.
-public List<BookBorrower>? BookBorrowers {get; set;} = default!; // Navigation property. A Borrower can get many Books.
+public List<BookBorrowers>? BookBorrowers {get; set;} = default!; // Navigation property. A Borrower can get many Books.
+
+    public static implicit operator Borrowers(string v)
+    {
+        throw new NotImplementedException();
+    }
 }
 
-public class BookBorrower
+public class BookBorrowers
 {
     public int BorrowersID {get; set;}
     public int BooksID {get; set;}
-    public Books Books {get; set;} = default!;
-    public Borrowers Borrowers {get; set;} = default!;
+    public Books Title {get; set;} = default!;
+    public Borrowers Name {get; set;} = default!;
 }
