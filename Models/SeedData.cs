@@ -64,11 +64,11 @@ public static class SeedData
 
         List<BookBorrowers> bookborrowers = new List<BookBorrowers>
         {
-            new BookBorrowers {BorrowersID = 145, BooksID = 9, Title = "Animal Farm", Name = "Eric", },
-            new BookBorrowers {BorrowersID = 555, BooksID = 2, Title = "Old Yeller", Name = "Naomi", },
-            new BookBorrowers {BorrowersID = 753, BooksID = 7, Title = "The Road", Name = "Calvin", },
-            new BookBorrowers {BorrowersID = 277, BooksID = 4, Title = "Calvin and Hobbes", Name = "Azazel", },
-            new BookBorrowers {BorrowersID = 282, BooksID = 3, Title = "The Stand", Name = "Sally", },
+            new BookBorrowers {BorrowersID = 145, BooksID = 9, Names = "Animal Farm", BorrowerName = "Eric", },
+            new BookBorrowers {BorrowersID = 555, BooksID = 2, Names = "Old Yeller", BorrowerName = "Naomi", },
+            new BookBorrowers {BorrowersID = 753, BooksID = 7, Names = "The Road", BorrowerName = "Calvin", },
+            new BookBorrowers {BorrowersID = 277, BooksID = 4, Names = "Calvin and Hobbes", BorrowerName = "Azazel", },
+            new BookBorrowers {BorrowersID = 282, BooksID = 3, Names = "The Stand", BorrowerName = "Sally", },
         };
     }
 }

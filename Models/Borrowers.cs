@@ -30,6 +30,6 @@ public class BookBorrowers
 {
     public int BorrowersID {get; set;}
     public int BooksID {get; set;}
-    public Books Title {get; set;} = default!;
-    public Borrowers Name {get; set;} = default!;
+    public Books BorrowerName {get; set;} = default!;
+    public Borrowers Names {get; set;} = default!;
 }
