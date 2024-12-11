@@ -18,5 +18,5 @@ public class AppDbContext : DbContext
 
     public DbSet<Books>? Books {get; set;}
     public DbSet<Borrowers>? Borrowers {get; set;}
-    public DbSet<BookBorrowers>? BookBorrower {get; set;}
+    public DbSet<BookBorrowers>? BookBorrower {get; set;} 
 }
