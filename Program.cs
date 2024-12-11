@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Curiosity_Voyage_Library_Management_System_1.Models;
+using BookBorrower.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("BookBorrowerConnection")));
 
 var app = builder.Build();
+
+// Seed Data
+using (var scope = app.Services.CreateScope())
+{
+    SeedData.Initialize(scope.ServiceProvider);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
