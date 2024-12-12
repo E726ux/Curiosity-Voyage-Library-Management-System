@@ -44,4 +44,15 @@ public string Name {get; set;} = string.Empty;
 [StringLength(30, MinimumLength = 3)]
 [Required]
 public string Names {get; set;} = string.Empty;
+
+[BindProperty]
+[Display(Name = "BooksID")]
+[Required]
+public string BooksID {get; set;} = string.Empty;
+
+[BindProperty]
+[Display(Name = "Title")]
+[Required]
+[StringLength(20)]
+public string Title {get; set;} = string.Empty;
 }
