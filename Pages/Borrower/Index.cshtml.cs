@@ -25,9 +25,21 @@ namespace Curiosity_Voyage_Library_Management_System_1.Pages.Borrower
             Borrowers = await _context.Borrowers.ToListAsync();
         }
 
+        
+
+
+
         [BindProperty(SupportsGet = true)]
 public int PageNum {get; set;} = 1;
 public int PageSize {get; set;} = 10;
 public int TotalPages {get; set;}
+
+// Sorting support
+[BindProperty(SupportsGet = true)]
+public string CurrentSort {get; set;} = string.Empty;
+
+// Search support
+[BindProperty(SupportsGet = true)]
+public string CurrentSearch {get; set;} = string.Empty;
     }
 }
